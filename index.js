@@ -30,12 +30,12 @@
 //   console.log('listening on *:3000');
 // });
 
-// const express = require('express');
+const express = require('express');
 const { createServer } = require('http');
 const { join } = require('node:path');
 const { Server } = require('socket.io');
 
-// const app = express();
+const app = express();
 const server = createServer();
 const io = new Server(server, {
     cors: {
@@ -43,9 +43,11 @@ const io = new Server(server, {
     }
   });
 
-// app.get('/', (req, res) => {
-//     res.sendFile(join(__dirname, 'index.html'));
-// });
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+    res.sendFile(join(__dirname, 'index.html'));
+});
 
 
 io.on('connection', (socket) => {
@@ -67,7 +69,6 @@ io.engine.on("connection_error", (err) => {
     console.log(err.context);  // some additional error context
 });
 
-
-server.listen(3000, () => {
-    console.log('server running at http://localhost:3000');
+server.listen(PORT, () => {
+    console.log(`Server running at PORT ${PORT}`);
   });
