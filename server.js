@@ -42,8 +42,35 @@ io.on('connection', (socket) => {
         // console.log('channel_platfrom: ' + data);
 
         if (data == "connect") {
+            console.log("function running");
             socket.emit('client', 'hello client'); //SENT BACK TO CLIENT ON 'client' CHANNEL
             socket.broadcast.emit('test', 'world'); //BROADCAST TO ALL CLIENT OPEN WITH 'test'
+        }
+
+        if (data == "onPreviewScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onPreviewScene');
+            console.log("! setUnityPlatFrom/onPreviewScene");
+        }
+        if (data == "onListStyleScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onListStyleScene');
+            console.log("! setUnityPlatFrom/onListStyleScene");
+        }
+        if (data == "onStyleSelectedScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onStyleSelectedScene');
+            console.log("! setUnityPlatFrom/onStyleSelectedScene");
+        }
+        if (data == "onStyleFullViewScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onStyleFullViewScene');
+            console.log("! setUnityPlatFrom/onStyleFullViewScene");
+        }
+        if (data == "onPreviewCaptureScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onPreviewCaptureScene');
+            console.log("! setUnityPlatFrom/onPreviewCaptureScene");
+        }
+
+        if (data == "onCaptureGIF") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onCaptureGIF');
+            console.log("!!! setUnityPlatFrom/onCaptureGIF");
         }
     });
 });
