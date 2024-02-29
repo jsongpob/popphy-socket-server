@@ -59,10 +59,26 @@ io.on('connection', (socket) => {
             socket.broadcast.emit('setUnityPlatFrom', 'onStyleSelectedScene');
             console.log("! setUnityPlatFrom/onStyleSelectedScene");
         }
-        if (data == "onStyleFullViewScene") {
-            socket.broadcast.emit('setUnityPlatFrom', 'onStyleFullViewScene');
-            console.log("! setUnityPlatFrom/onStyleFullViewScene");
+
+
+        if (data == "onAmericanDinner_StyleFullViewScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onAmericanDinner_StyleFullViewScene');
+            console.log("! setUnityPlatFrom/onAmericanDinner_StyleFullViewScene");
         }
+        if (data == "onAnimalParty_StyleFullViewScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onAnimalParty_StyleFullViewScene');
+            console.log("! setUnityPlatFrom/onAnimalParty_StyleFullViewScene");
+        }
+        if (data == "onTechnoShowOff_StyleFullViewScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onTechnoShowOff_StyleFullViewScene');
+            console.log("! setUnityPlatFrom/onTechnoShowOff_StyleFullViewScene");
+        }
+        if (data == "onThailand_StyleFullViewScene") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onThailand_StyleFullViewScene');
+            console.log("! setUnityPlatFrom/onThailand_StyleFullViewScene");
+        }
+
+
         if (data == "onPreviewCaptureScene") {
             socket.broadcast.emit('setUnityPlatFrom', 'onPreviewCaptureScene');
             console.log("! setUnityPlatFrom/onPreviewCaptureScene");
