@@ -1,31 +1,27 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http, {
-    cors: {
-        origin: "*"
-    }
-});
-var express = require('express')
+const express = require('express');
+const app = express();
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+const port = 5000;
+
+// var io = require('socket.io')(http, {
+//     cors: {
+//         origin: "*"
+//     }
+// });
 
 //DIRECT TO INDEX.HTML
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 })
 
-
-//THROW ERROR WHEN GET SOME ERROR
-io.engine.on("connection_error", (err) => {
-    console.log(err.req);      // the request object
-    console.log(err.code);     // the error code, for example 1
-    console.log(err.message);  // the error message, for example "Session ID unknown"
-    console.log(err.context);  // some additional error context
-});
-
 //LISTEN FROM PORT?
-http.listen(3000, function () {
-    console.log('listening on *:3000');
+server.listen(port, function () {
+    console.log(`Server started on port: ${port}`);
 });
-
 
 //SOCKET ON WITH 'CHANNEL' WHEN OPEN 'CONNECTION'
 io.on('connection', (socket) => {
@@ -89,4 +85,13 @@ io.on('connection', (socket) => {
             console.log("!!! setUnityPlatFrom/onCaptureGIF");
         }
     });
+});
+
+
+//THROW ERROR WHEN GET SOME ERROR
+io.engine.on("connection_error", (err) => {
+    console.log(err.req);      // the request object
+    console.log(err.code);     // the error code, for example 1
+    console.log(err.message);  // the error message, for example "Session ID unknown"
+    console.log(err.context);  // some additional error context
 });
