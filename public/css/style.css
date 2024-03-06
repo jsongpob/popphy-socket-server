@@ -1,0 +1,98 @@
+a:link {
+    text-decoration: none; 
+}
+
+.logo {
+    width: 30rem;
+}
+.logo-sm {
+    width: 20rem;
+}
+
+.stroke-text-style {
+    color: #fff;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 2px;
+    text-shadow: 0px 2px 0px #000000;
+}
+
+.yellow-button {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 6px solid #000;
+    background: #FFBA34;
+    box-shadow: 0px 9px 0px 0px #000;
+    transition: 0.3s;
+}
+
+.yellow-button:hover {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 6px solid #000;
+    background: #ffaa00;
+    box-shadow: 0px 4px 0px 0px #000;
+}
+
+.gray-button {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 3px solid #000;
+    background: #CECECE;
+    box-shadow: 0px 2px 0px 0px #000;
+    transition: 0.3s;
+}
+
+.gray-button:hover {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 3px solid #000;
+    background: #CECECE;
+    box-shadow: 0px 4px 0px 0px #000;
+}
+
+.dark-gray-button {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 3px solid #000;
+    background: #CECECE;
+    box-shadow: 0px 2px 0px 0px #000;
+    transition: 0.3s;
+}
+
+.dark-gray-button:hover {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 3px solid #000;
+    background: #CECECE;
+    box-shadow: 0px 4px 0px 0px #000;
+}
+
+.title-style {
+    transition: 0.3s;
+}
+
+.title-style:hover {
+    opacity: 50%;
+}
+
+.title-size {
+    width: 60rem;
+}
+
+.unactive-yellow-button {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 6px solid #000;
+    background: #ffde9b;
+    box-shadow: 0px 9px 0px 0px #000;
+    transition: 0.3s;
+}
+
+.light-gray-button {
+    color: #000000;
+    border-radius: 89.5px;
+    border: 6px solid #000;
+    background: #CFCFCF;
+    box-shadow: 0px 9px 0px 0px #000;
+    transition: 0.3s;
+}

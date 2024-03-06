@@ -3,50 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popphy Clicent</title>
-
+    <title>POPPHY | Make it your pop with the art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <script src="http://192.168.182.164:5000/socket.io/socket.io.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/font_mitr.css">
+
+    <script src="http://192.168.182.164/socket.io/socket.io.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="px-4 py-5 my-5 text-center">
-
-          <H1>POPPHY CONTROLLER</H1>
-
-          <div class="col-lg-12 mx-auto">
-            <div class="lead mb-4">
-              <a>This website is use for testing controller unity with socket.io</a>
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <img src="/public/img/popphy_logo_v1.png" alt="popphy_logo" class="logo">
+            <div class="text-center my-5 mitr-medium">
+                <h2>It's make your pop with the art.</h2>
             </div>
-
-            <div class="mt-3">
-                <a href="/public/on_preview.html">Go to Preview</a>
+            <!-- Button -->
+            <div class="text-center my-5 mitr-medium">
+                <p><a id="onSelectstyleBTN" href="http://192.168.182.164/list-of-styles" class="yellow-button fs-1 px-4">Let's start</a></p>
             </div>
-
-            <div class="mt-3">
-                <button id="onPreviewSceneBtn" type="button" class="btn btn-dark btn-xl">Preview Scene</button>
-                <button id="onListStyleSceneBtn" type="button" class="btn btn-dark btn-xl">List Style Scene</button>
-                <button id="onStyleSelectedSceneBtn" type="button" class="btn btn-dark btn-xl">Style Selected Preview</button>
-                <button id="onPreviewCaptureSceneBtn" type="button" class="btn btn-dark btn-xl">Preview Capture</button>
-            </div>
-
-            <div class="mt-5">
-                <button id="onAmericanDinnerStyleFullViewSceneBtn" type="button" class="btn btn-primary btn-lg">American Dinner</button>
-                <button id="onAnimalPartyStyleFullViewSceneBtn" type="button" class="btn btn-primary btn-lg">Animal Party</button>
-                <button id="onTechnoShowOffStyleFullViewSceneBtn" type="button" class="btn btn-primary btn-lg">Techno Showoff</button>
-                <button id="onThailandStyleFullViewSceneBtn" type="button" class="btn btn-primary btn-lg">Thailand</button>
-            </div>
-
-            <br>
-            <div class="mt-5">
-                <button id="onCaptureGIFBtn" type="button" class="btn btn-warning btn-lg">Let's Capture</button>
-            </div>
-
-          </div>
-
         </div>
     </div>
   
@@ -55,7 +34,7 @@
 
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.182.164:5000");
+        const socket = io("http://192.168.182.164");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {
@@ -66,6 +45,19 @@
             console.log(value);
         })
     </script>
+
+    <!-- ______________NEW_SCRIPTS_______________ -->
+    <script>
+        //Go to style_list.html
+        const onSelectstyle = document.getElementById('onSelectstyleBTN');
+        onSelectstyle.addEventListener('click', () => {
+            //send to socket server
+            socket.timeout(5000).emit("channel_platfrom", "selectListOfStyle", (err, response) => {
+                if (err) {} else {console.log(response);}
+            });
+        })
+    </script>
+
     <script>
         //GET BUTTON
         const onPreviewSceneBtn = document.getElementById('onPreviewSceneBtn');

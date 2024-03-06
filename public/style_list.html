@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPPHY | Select the style you like!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/font_mitr.css">
+
+    <script src="http://192.168.182.164/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <div>
+            <div class="text-center my-5 mitr-medium">
+                <div class="row">
+                    <!-- Back Button -->
+                    <div class="col ms-5 text-start"><a id="onHomeBTN" href="http://192.168.182.164/" class="gray-button fs-3 px-3"><i class="bi bi-arrow-left"></i></a></div>
+                    <!-- Back Button -->
+                    <div class="col-6"><h1>Choose your favorite style</h1></div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            <div class="row g-2">
+
+                <!-- American Dinner Button -->
+                <div class="col-6">
+                    <p>
+                    <a id="gotoAmericanPreviewBTN" href="http://192.168.182.164/preview-ad-theme"><img src="/public/img/styles/american_dinner_title.png" alt="american_dinner" class="img-fluid title-style"></a>
+                    </p>
+                </div>
+                <!-- American Dinner Button -->
+
+                <!-- Animal Party Button -->
+                <div class="col-6">
+                    <p>
+                    <a id="gotoAnimalPreviewBTN" href="http://192.168.182.164/preview-ap-theme"><img src="/public/img/styles/animal_party_title.png" alt="animal_party" class="img-fluid title-style"></a>
+                    </p>
+                </div>
+                <!-- Animal Party Button -->
+
+                <!-- Hello Welcome Button -->
+                <div class="col-6">
+                    <p>
+                    <a id="gotoHelloPreviewBTN" href="http://192.168.182.164/preview-hw-theme"><img src="/public/img/styles/hello_welcome_title.png" alt="hello_welcome" class="img-fluid title-style"></a>
+                    </p>
+                </div>
+                <!-- Hello Welcome Button -->
+
+                <!-- Techno Showoff Button -->
+                <div class="col-6">
+                    <p>
+                    <a id="gotoTechnoPreviewBTN" href="http://192.168.182.164/preview-ts-theme"><img src="/public/img/styles/techno_showoff_title.png" alt="techno_showoff" class="img-fluid title-style"></a>
+                    </p>
+                </div>
+                <!-- Techno Showoff Button -->
+
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        //SOCKET IP
+        const socket = io("http://192.168.182.164");
+
+        //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
+        socket.on('client', (data) => {
+            console.log(data);
+        })
+
+        socket.on('test', (value) => {
+            console.log(value);
+        })
+    </script>
+
+    <!-- ______________NEW_SCRIPTS_______________ -->
+    <script>
+        //Go to home.html #Back
+        const onHome = document.getElementById('onHomeBTN');
+        onHome.addEventListener('click', () => {
+            //send to socket server
+            socket.timeout(5000).emit("channel_platfrom", "onPreviewIDLE", (err, response) => {
+                if (err) {} else {console.log(response);}
+            });
+        })
+
+        //Go to /style_list/american_dinner.html #Preview
+        const gotoAmericanPreview = document.getElementById('gotoAmericanPreviewBTN');
+        gotoAmericanPreview.addEventListener('click', () => {
+            //send to socket server
+            socket.timeout(5000).emit("channel_platfrom", "selectADpreview", (err, response) => {
+                if (err) {} else {console.log(response);}
+            });
+        })
+
+        //Go to /style_list/animal_party.html #Preview
+        const gotoAnimalPreview = document.getElementById('gotoAnimalPreviewBTN');
+        gotoAnimalPreview.addEventListener('click', () => {
+            //send to socket server
+            socket.timeout(5000).emit("channel_platfrom", "selectAPpreview", (err, response) => {
+                if (err) {} else {console.log(response);}
+            });
+        })
+
+        //Go to /style_list/hello_welcome.html #Preview
+        const gotoHelloPreview = document.getElementById('gotoHelloPreviewBTN');
+        gotoHelloPreview.addEventListener('click', () => {
+            //send to socket server
+            socket.timeout(5000).emit("channel_platfrom", "selectHWpreview", (err, response) => {
+                if (err) {} else {console.log(response);}
+            });
+        })
+
+        //Go to /style_list/techno_showoff.html #Preview
+        const gotoTechnoPreview = document.getElementById('gotoTechnoPreviewBTN');
+        gotoTechnoPreview.addEventListener('click', () => {
+            //send to socket server
+            socket.timeout(5000).emit("channel_platfrom", "selectTSpreview", (err, response) => {
+                if (err) {} else {console.log(response);}
+            });
+        })
+    </script>
+</body>
+</html>
