@@ -68,6 +68,23 @@ app.get('/captured', (req, res) => {
 app.get('/captured-ad', (req, res) => {
     res.sendFile(__dirname + '/public/captured/captured_ad.html');
 })
+//To Captured Animal Party
+app.get('/captured-ap', (req, res) => {
+    res.sendFile(__dirname + '/public/captured/captured_ap.html');
+})
+//To Captured Hello Welcome
+app.get('/captured-hw', (req, res) => {
+    res.sendFile(__dirname + '/public/captured/captured_hw.html');
+})
+//To Captured Techno Showoff
+app.get('/captured-ts', (req, res) => {
+    res.sendFile(__dirname + '/public/captured/captured_ts.html');
+})
+
+//___________________END_______________________
+app.get('/end', (req, res) => {
+    res.sendFile(__dirname + '/public/end.html');
+})
 
 //USE PUBLIC FOLDER
 app.use("/public", express.static(__dirname + "/public"));
@@ -79,11 +96,11 @@ server.listen(port, function () {
 
 //SOCKET ON WITH 'CHANNEL' WHEN OPEN 'CONNECTION'
 io.on('connection', (socket) => {
-    //console.log(`+ ${socket.id} connected`); // connection devices
+    console.log(`+ ${socket.id} connected`); // connection devices
 
     //WHEN CLIENT DISCONNECT FROM SOCKET
     socket.on('disconnect', () => {
-        //console.log(`- ${socket.id} disconnected`);
+        console.log(`- ${socket.id} disconnected`);
     });
 
     //CHANNELS SOCKET
@@ -164,6 +181,12 @@ io.on('connection', (socket) => {
         if (data == "startCapture") {
             socket.broadcast.emit('setUnityPlatFrom', 'startCapture'); //UNITY
             console.log("-----> send to unity: startCapture (Start Capture)");
+        }
+
+        //_________END_________
+        if (data == "onEnd") {
+            socket.broadcast.emit('setUnityPlatFrom', 'onEnd'); //UNITY
+            console.log("-----> send to unity: onEnd (End Scene)");
         }
     });
 });

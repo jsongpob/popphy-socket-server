@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview of Animal Party | POPPHY</title>
+    <title>Playing with pop | POPPHY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,33 +16,32 @@
     <script src="http://192.168.182.224/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center position-absolute top-50 start-50 translate-middle">
         <div>
             <div class="text-center my-5 mitr-medium">
                 <div class="row">
                     <div class="col ms-5 text-start">
-                        <a id="onSelectstyleBTN" href="http://192.168.182.224/list-of-styles" class="gray-button fs-3 px-3">
-                            <i class="bi bi-arrow-left"></i>
-                        </a>
                     </div>
-                    <div class="col-6">
-                        <h1>Preview of</h1>
+                    <div class="col">
                     </div>
                     <div class="col">
 
                     </div>
                 </div>
 
-                <div class="text-center">
-                    <img src="/public/img/styles/animal_party_title.png" alt="animal_party" class="img-fluid title-size">
+                <div class="text-center my-5">
+                    <h1>Thank you for playing with popphy</h1>
                 </div>
 
-                <div class="text-center"><h5 class="mitr-regular">The theme can be previewed on the main screen.</h5></div>
-
                 <div class="row">
-                    <div class="text-center mitr-medium mt-5">
-                        <p><a id="onAnimalPartyFullBTN" href="http://192.168.182.224/playing-ap" class="yellow-button fs-1 px-4">Start some Pop</a></p>
+                    <div class="col"></div>
+                    <div class="col-5 text-center mitr-medium mt-5">
+                        <p><a id="" href="" class="light-gray-button fs-1 px-5">See all photo</a></p>
                     </div>
+                    <div class="col-4 text-center mitr-medium mt-5">
+                        <p><a id="onRestartBTN" href="http://192.168.182.224" class="yellow-button fs-1 px-5">Restart</a></p>
+                    </div>
+                    <div class="col"></div>
                 </div>
                 
             </div>
@@ -66,20 +65,11 @@
 
     <!-- ______________NEW_SCRIPTS_______________ -->
     <script>
-        //Go to /playing/playing-ap.html
-        const onAnimalPartyFull = document.getElementById('onAnimalPartyFullBTN');
-        onAnimalPartyFull.addEventListener('click', () => {
+        //Go to capturing.html
+        const onRestart = document.getElementById('onRestartBTN');
+        onRestart.addEventListener('click', () => {
             //send to socket server
-            socket.timeout(5000).emit("channel_platfrom", "goAPfull", (err, response) => {
-                if (err) {} else {console.log(response);}
-            });
-        })
-
-        //Go to style_list.html
-        const onSelectstyle = document.getElementById('onSelectstyleBTN');
-        onSelectstyle.addEventListener('click', () => {
-            //send to socket server
-            socket.timeout(5000).emit("channel_platfrom", "selectListOfStyle", (err, response) => {
+            socket.timeout(5000).emit("channel_platfrom", "onPreviewIDLE", (err, response) => {
                 if (err) {} else {console.log(response);}
             });
         })

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://192.168.182.164/socket.io/socket.io.js"></script>
+    <script src="http://192.168.182.224/socket.io/socket.io.js"></script>
 </head>
 <body>
     <div class="container-fluid text-center">
@@ -21,7 +21,7 @@
             <div class="text-center my-5 mitr-medium">
                 <div class="row">
                     <div class="col ms-5 text-start">
-                        <a id="onSelectstyleBTN" href="http://192.168.182.164/list-of-styles" class="gray-button fs-3 px-3">
+                        <a id="onSelectstyleBTN" href="http://192.168.182.224/list-of-styles" class="gray-button fs-3 px-3">
                             <i class="bi bi-arrow-left"></i>
                         </a>
                     </div>
@@ -41,7 +41,7 @@
 
                 <div class="row">
                     <div class="text-center mitr-medium mt-5">
-                        <p><a id="onHelloWelcomeFullBTN" href="http://192.168.182.164/playing" class="yellow-button fs-1 px-4">Start some Pop</a></p>
+                        <p><a id="onHelloWelcomeFullBTN" href="http://192.168.182.224/playing-hw" class="yellow-button fs-1 px-4">Start some Pop</a></p>
                     </div>
                 </div>
                 
@@ -52,7 +52,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.182.164");
+        const socket = io("http://192.168.182.224");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {
@@ -66,7 +66,7 @@
 
     <!-- ______________NEW_SCRIPTS_______________ -->
     <script>
-        //Go to playing.html
+        //Go to /playing/playing_hw.html
         const onHelloWelcomeFull = document.getElementById('onHelloWelcomeFullBTN');
         onHelloWelcomeFull.addEventListener('click', () => {
             //send to socket server
