@@ -1,11 +1,18 @@
+const mysql = require('mysql');
 const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: "*"
+    }
+});
 
-const port = 80;
+const port = 3000;
+
+var filepathfromUnity = "";
 
 // var io = require('socket.io')(http, {
 //     cors: {
@@ -104,7 +111,13 @@ io.on('connection', (socket) => {
     });
 
     //CHANNELS SOCKET
-    //RECEIVE FROM CLIENT SOCKET ON 'channel_platfrom' CHANNEL
+    //______RECEIVE FROM CLIENT SOCKET ON 'channel_data' CHANNEL
+    socket.on('channel_data', (data) => {
+        console.log(data);
+    });
+
+
+    //______RECEIVE FROM CLIENT SOCKET ON 'channel_platfrom' CHANNEL
     socket.on('channel_platfrom', (data) => {
         // console.log('channel_platfrom: ' + data);
 
@@ -188,9 +201,17 @@ io.on('connection', (socket) => {
             socket.broadcast.emit('setUnityPlatFrom', 'onEnd'); //UNITY
             console.log("-----> send to unity: onEnd (End Scene)");
         }
+
+        //_________UPLOAD_FILES_TO_DATABASE_________
+        if (data == "uploadFileNow") {
+        }
     });
 });
 
+//TESTING
+app.get('/testing', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+})
 
 //THROW ERROR WHEN GET SOME ERROR
 io.engine.on("connection_error", (err) => {
@@ -199,3 +220,76 @@ io.engine.on("connection_error", (err) => {
     console.log(err.message);  // the error message, for example "Session ID unknown"
     console.log(err.context);  // some additional error context
 });
+
+
+//_______DATABASE_________
+// app.use(express.json());
+
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'arts',
+//     port: ''
+// })
+
+// connection.connect((err) => {
+//     if (err) {
+//         console.log('Error connecting to MySQL database = ', err)
+//         return;
+//     }
+//     console.log('[database] MySQL successfully connected!');
+// })
+
+// //CREATE NEW TO DATABASE
+// app.post("/create-test", async (req, res) => {
+//     const { filepath, accept } = req.body;
+
+//     try {
+//         connection.query(
+//             "INSERT INTO popphy(filepath, accept) VALUES(?, ?)",
+//             [filepath, accept],
+//             (err, result, fields) => {
+//                 if (err) {
+//                     console.log("Error while inserting to database", err);
+//                     return res.status(400).send();
+//                 }
+//                 return res.status(200).json({ message: "New file added to database successfully"})
+//             }
+//         )
+//     } catch(err) {
+//         console.log(err);
+//         return res.status(500).send();
+//     }
+// })
+
+// app.get("/read-test", async (req, res) => {
+//     try {
+//         connection.query("SELECT * FROM popphy", (err, result, fields) => {
+//             if (err) {
+//                 console.log(err);
+//                 return res.status(400).send();
+//             }
+//             res.status(200).json(result);
+//         })
+//     } catch(err) {
+//         console.log(err);
+//         return res.status(500).send();
+//     }
+// })
+
+
+// app.get('/photos', (req, res) => {
+//     res.sendFile(__dirname + '/public/previews/index.php');
+// })
+
+
+// //SCAN TO DOWNLOAD PHOTO PAGE
+// //______________________HOME___________________________
+// app.set('view engine', 'ejs')
+// app.get('/photos-ejs', (req, res) => {
+//     res.render('index', {
+//         user: user
+//     })
+// })
+

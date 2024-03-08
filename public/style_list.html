@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://192.168.182.224/socket.io/socket.io.js"></script>
+    <script src="http://192.168.182.98:3000/socket.io/socket.io.js"></script>
 </head>
 <body>
     <div class="container-fluid text-center">
@@ -21,7 +21,7 @@
             <div class="text-center my-5 mitr-medium">
                 <div class="row">
                     <!-- Back Button -->
-                    <div class="col ms-5 text-start"><a id="onHomeBTN" href="http://192.168.182.224/" class="gray-button fs-3 px-3"><i class="bi bi-arrow-left"></i></a></div>
+                    <div class="col ms-5 text-start"><a id="onHomeBTN" href="http://192.168.182.98:3000/" class="gray-button fs-3 px-3"><i class="bi bi-arrow-left"></i></a></div>
                     <!-- Back Button -->
                     <div class="col-6"><h1>Choose your favorite style</h1></div>
                     <div class="col"></div>
@@ -32,7 +32,7 @@
                 <!-- American Dinner Button -->
                 <div class="col-6">
                     <p>
-                    <a id="gotoAmericanPreviewBTN" href="http://192.168.182.224/preview-ad-theme"><img src="/public/img/styles/american_dinner_title.png" alt="american_dinner" class="img-fluid title-style"></a>
+                    <a id="gotoAmericanPreviewBTN" href="http://192.168.182.98:3000/preview-ad-theme"><img src="/public/img/styles/american_dinner_title.png" alt="american_dinner" class="img-fluid title-style"></a>
                     </p>
                 </div>
                 <!-- American Dinner Button -->
@@ -40,7 +40,7 @@
                 <!-- Animal Party Button -->
                 <div class="col-6">
                     <p>
-                    <a id="gotoAnimalPreviewBTN" href="http://192.168.182.224/preview-ap-theme"><img src="/public/img/styles/animal_party_title.png" alt="animal_party" class="img-fluid title-style"></a>
+                    <a id="gotoAnimalPreviewBTN" href="http://192.168.182.98:3000/preview-ap-theme"><img src="/public/img/styles/animal_party_title.png" alt="animal_party" class="img-fluid title-style"></a>
                     </p>
                 </div>
                 <!-- Animal Party Button -->
@@ -48,7 +48,7 @@
                 <!-- Hello Welcome Button -->
                 <div class="col-6">
                     <p>
-                    <a id="gotoHelloPreviewBTN" href="http://192.168.182.224/preview-hw-theme"><img src="/public/img/styles/hello_welcome_title.png" alt="hello_welcome" class="img-fluid title-style"></a>
+                    <a id="gotoHelloPreviewBTN" href="http://192.168.182.98:3000/preview-hw-theme"><img src="/public/img/styles/hello_welcome_title.png" alt="hello_welcome" class="img-fluid title-style"></a>
                     </p>
                 </div>
                 <!-- Hello Welcome Button -->
@@ -56,7 +56,7 @@
                 <!-- Techno Showoff Button -->
                 <div class="col-6">
                     <p>
-                    <a id="gotoTechnoPreviewBTN" href="http://192.168.182.224/preview-ts-theme"><img src="/public/img/styles/techno_showoff_title.png" alt="techno_showoff" class="img-fluid title-style"></a>
+                    <a id="gotoTechnoPreviewBTN" href="http://192.168.182.98:3000/preview-ts-theme"><img src="/public/img/styles/techno_showoff_title.png" alt="techno_showoff" class="img-fluid title-style"></a>
                     </p>
                 </div>
                 <!-- Techno Showoff Button -->
@@ -69,7 +69,7 @@
 
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.182.224");
+        const socket = io("http://192.168.182.98:3000");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {
