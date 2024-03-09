@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://192.168.182.98:3000/socket.io/socket.io.js"></script>
+    <script src="http://192.168.200.6/socket.io/socket.io.js"></script>
 </head>
 <body>
     <div class="container">
@@ -24,7 +24,7 @@
             </div>
             <!-- Button -->
             <div class="text-center my-5 mitr-medium">
-                <p><a id="onSelectstyleBTN" href="http://192.168.182.98:3000/list-of-styles" class="yellow-button fs-1 px-4">Let's start</a></p>
+                <p><a id="onSelectstyleBTN" href="http://192.168.200.6/list-of-styles" class="yellow-button fs-1 px-4">Let's start</a></p>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
 
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.182.98:3000");
+        const socket = io("http://192.168.200.6");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {

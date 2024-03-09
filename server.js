@@ -10,7 +10,7 @@ const io = new Server(server, {
     }
 });
 
-const port = 3000;
+const port = 80;
 
 var filepathfromUnity = "";
 
