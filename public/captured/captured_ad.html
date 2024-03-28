@@ -13,40 +13,33 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://192.168.200.6/socket.io/socket.io.js"></script>
+    <script src="http://192.168.1.143/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <div class="container-fluid text-center">
-        <div>
-            <div class="text-center my-5 mitr-medium">
-                <div class="row">
-                    <div class="col ms-5 text-start">
-                    </div>
-                    <div class="col-6">
-                        <h1>Preview Photo</h1>
-                    </div>
-                    <div class="col">
 
-                    </div>
-                </div>
+    <!-- sticky header -->
+    <div class="container-fluid bg-popphy fixed-top">
+        <div class="d-flex flow-row justify-content-between px-3 mitr-medium">
+            <div class="sub-title-font align-self-center"></div>
+            <div class="title-font align-self-center mx-5">POPPHY</div>
+            <div class="sub-title-font align-self-center"></div>
+        </div>
+    </div>
+    <!-- sticky header -->
 
-                <div class="text-center my-2">
-                    <img src="/public/img/styles/american_dinner_title.png" alt="techno_showoff" class="img-fluid title-size">
-                </div>
-
-                <div class="text-center"><h5 class="mitr-regular">Captured Photo</h5></div>
-
-                <div class="row">
-                    <div class="col-sm"></div>
-                    <div class="col-sm text-center mitr-medium mt-5">
-                        <p><a id="onRetakeBTN" href="http://192.168.200.6/playing-ad" class="light-gray-button fs-1 px-5">Retake</a></p>
-                    </div>
-                    <div class="col-sm text-center mitr-medium mt-5">
-                        <p><a id="onEndBTN" href="http://192.168.200.6/end" class="yellow-button fs-1 px-5">Finish</a></p>
-                    </div>
-                    <div class="col-sm"></div>
-                </div>
-                
+    <div class="container-fluid">
+        <div class="container-fluid position-absolute top-50 start-50 translate-middle px-3">
+            <div class="text-center margin-40-bottom">
+                <img src="/public/img/styles/american_dinner_title.png" alt="american_dinner" class="img-fluid title-size">
+            </div>
+        </div>
+        <div class="text-center mt-5 mitr-medium fixed-bottom margin-30-bottom">
+            <div class="mb-5">
+                <p class="mitr-medium fs-2">Do you like the picture? You can take a new one.</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p><a id="onRetakeBTN" href="http://192.168.1.143/playing-ad" class="gray-button fs-1 px-5 mx-3">Retake a photo</a></p>
+                <p><a id="onEndBTN" href="http://192.168.1.143/end" class="yellow-button fs-1 px-5 mx-3">Continue</a></p>
             </div>
         </div>
     </div>
@@ -54,7 +47,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.200.6");
+        const socket = io("http://192.168.1.143");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {

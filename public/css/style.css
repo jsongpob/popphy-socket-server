@@ -2,6 +2,48 @@ a:link {
     text-decoration: none; 
 }
 
+.bg-popphy {
+    background: linear-gradient(0deg, rgba(255, 178, 28, 0.00) 0%, #FFB21C 106.67%);
+}
+
+.title-font {
+    color: #FFF;
+    text-shadow: 0px 4px 0px #000;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #000;
+    font-family: Mitr;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+  
+.sub-title-font {
+    color: #FFF;
+    text-align: right;
+    text-shadow: 0px 2px 0px #000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    font-family: Mitr;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.margin-30 {
+    margin-top: 30%;
+}
+
+.margin-30-bottom {
+    margin-bottom: 5rem;
+}
+
+.margin-40-bottom {
+    margin-bottom: 7rem;
+}
+
+
 .logo {
     width: 30rem;
 }
@@ -21,7 +63,7 @@ a:link {
     border-radius: 89.5px;
     border: 6px solid #000;
     background: #FFBA34;
-    box-shadow: 0px 9px 0px 0px #000;
+    box-shadow: 0px 6px 0px 0px #000;
     transition: 0.3s;
 }
 
@@ -36,17 +78,17 @@ a:link {
 .gray-button {
     color: #000000;
     border-radius: 89.5px;
-    border: 3px solid #000;
-    background: #CECECE;
-    box-shadow: 0px 2px 0px 0px #000;
+    border: 6px solid #000;
+    background: #B9B9B9;
+    box-shadow: 0px 6px 0px 0px #000;
     transition: 0.3s;
 }
 
 .gray-button:hover {
     color: #000000;
     border-radius: 89.5px;
-    border: 3px solid #000;
-    background: #CECECE;
+    border: 6px solid #000;
+    background: #B9B9B9;
     box-shadow: 0px 4px 0px 0px #000;
 }
 
@@ -69,6 +111,7 @@ a:link {
 
 .title-style {
     transition: 0.3s;
+    width: 90%;
 }
 
 .title-style:hover {
