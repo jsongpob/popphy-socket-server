@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://192.168.1.135/socket.io/socket.io.js"></script>
+    <script src="http://popphy-socket-server.onrender.com/socket.io/socket.io.js"></script>
 </head>
 <body>
 
@@ -39,7 +39,7 @@
                 <!-- American Dinner Button -->
                 <div class="col-6">
                     <p>
-                        <a id="onAmericanFullBTN" href="http://192.168.1.135/playing-ad">
+                        <a id="onAmericanFullBTN" href="http://popphy-socket-server.onrender.com/playing-ad">
                             <img src="/public/img/styles/american_dinner_title.png" alt="american_dinner" class="img-fluid title-style">
                         </a>
                     </p>
@@ -49,7 +49,7 @@
                 <!-- Animal Party Button -->
                 <div class="col-6">
                     <p>
-                        <a id="onAnimalFullBTN" href="http://192.168.1.135/playing-ap">
+                        <a id="onAnimalFullBTN" href="http://popphy-socket-server.onrender.com/playing-ap">
                             <img src="/public/img/styles/animal_party_title.png" alt="animal_party" class="img-fluid title-style">
                         </a>
                     </p>
@@ -59,7 +59,7 @@
                 <!-- Hello Welcome Button -->
                 <div class="col-6">
                     <p>
-                        <a id="onHelloFullBTN" href="http://192.168.1.135/playing-hw">
+                        <a id="onHelloFullBTN" href="http://popphy-socket-server.onrender.com/playing-hw">
                             <img src="/public/img/styles/hello_welcome_title.png" alt="hello_welcome" class="img-fluid title-style">
                         </a>
                     </p>
@@ -69,7 +69,7 @@
                 <!-- Techno Showoff Button -->
                 <div class="col-6">
                     <p>
-                        <a id="onTechnoFullBTN" href="http://192.168.1.135/playing-ts">
+                        <a id="onTechnoFullBTN" href="http://popphy-socket-server.onrender.com/playing-ts">
                             <img src="/public/img/styles/techno_showoff_title.png" alt="techno_showoff" class="img-fluid title-style">
                         </a>
                     </p>
@@ -83,7 +83,7 @@
 
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.1.135");
+        const socket = io("http://popphy-socket-server.onrender.com");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {

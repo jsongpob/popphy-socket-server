@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://localhost/socket.io/socket.io.js"></script>
+    <script src="http://popphy-socket-server.onrender.com/socket.io/socket.io.js"></script>
 </head>
 <body>
 
@@ -37,8 +37,8 @@
         </div>
         <!-- Button -->
         <div class="text-center mt-5 mitr-medium fixed-bottom margin-30-bottom d-flex justify-content-center">
-            <p><a id="" href="http://localhost/" class="gray-button fs-1 px-5 mx-3">Cancel</a></p>
-            <p><a id="onSelectstyleBTN" href="http://localhost/list-of-styles" class="yellow-button fs-1 px-5 mx-3">Confirm</a></p>
+            <p><a id="" href="http://popphy-socket-server.onrender.com/" class="gray-button fs-1 px-5 mx-3">Cancel</a></p>
+            <p><a id="onSelectstyleBTN" href="http://popphy-socket-server.onrender.com/list-of-styles" class="yellow-button fs-1 px-5 mx-3">Confirm</a></p>
         </div>
     </div>
   
@@ -47,7 +47,7 @@
 
     <script>
         //SOCKET IP
-        const socket = io("http://localhost");
+        const socket = io("http://popphy-socket-server.onrender.com");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {
