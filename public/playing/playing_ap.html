@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://popphy-socket-server.onrender.com/socket.io/socket.io.js"></script>
+    <script src="https://popphy-socket-server.onrender.com/socket.io/socket.io.js"></script>
 </head>
 <body>
 
@@ -38,8 +38,8 @@
                 <p class="mitr-medium fs-2">Want to try taking some pictures?</p>
             </div>
             <div class="d-flex justify-content-center">
-                <p><a id="backToSelectStyleBTN" href="http://popphy-socket-server.onrender.com/list-of-styles" class="gray-button fs-1 px-5 mx-3">Select other theme</a></p>
-                <p><a id="startCapturingBTN" href="http://popphy-socket-server.onrender.com/captured-ap" class="yellow-button fs-1 px-5 mx-3">Take a Photo</a></p>
+                <p><a id="backToSelectStyleBTN" href="https://popphy-socket-server.onrender.com/list-of-styles" class="gray-button fs-1 px-5 mx-3">Select other theme</a></p>
+                <p><a id="startCapturingBTN" href="https://popphy-socket-server.onrender.com/captured-ap" class="yellow-button fs-1 px-5 mx-3">Take a Photo</a></p>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         //SOCKET IP
-        const socket = io("http://popphy-socket-server.onrender.com");
+        const socket = io("https://popphy-socket-server.onrender.com");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {
