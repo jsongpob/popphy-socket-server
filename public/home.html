@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
-    <script src="http://192.168.1.143/socket.io/socket.io.js"></script>
+    <script src="http://192.168.1.135/socket.io/socket.io.js"></script>
 </head>
 <body>
 
@@ -30,14 +30,15 @@
     <div class="container-fluid">
         <div class="container-fluid position-absolute top-50 start-50 translate-middle px-3">
             <div class="text-center mitr-medium">
-                <p class="fs-1">Popphy will collect your photos and post them on <br> public websites.</p>
+                <!-- <p class="fs-1">Popphy will collect your photos and post them on <br> public websites.</p> -->
+                <p class="fs-1 mx-5">By participating in this game, you agree to allow us to collect and use your photographs. These images may be posted on a public website. Your consent is crucial, and by continuing, you acknowledge and accept that your photos may be publicly displayed.</p>
                 <p class="fs-1 mt-5">Press confirm to continue.</p>
             </div>
         </div>
         <!-- Button -->
         <div class="text-center mt-5 mitr-medium fixed-bottom margin-30-bottom d-flex justify-content-center">
-            <p><a id="" href="http://192.168.1.143/" class="gray-button fs-1 px-5 mx-3">Cancel</a></p>
-            <p><a id="onSelectstyleBTN" href="http://192.168.1.143/list-of-styles" class="yellow-button fs-1 px-5 mx-3">Confirm</a></p>
+            <p><a id="" href="http://192.168.1.135/" class="gray-button fs-1 px-5 mx-3">Cancel</a></p>
+            <p><a id="onSelectstyleBTN" href="http://192.168.1.135/list-of-styles" class="yellow-button fs-1 px-5 mx-3">Confirm</a></p>
         </div>
     </div>
   
@@ -46,7 +47,7 @@
 
     <script>
         //SOCKET IP
-        const socket = io("http://192.168.1.143");
+        const socket = io("http://192.168.1.135");
 
         //RECEIVE FROM SERVER SOCKET ON 'clicent' CHANNEL
         socket.on('client', (data) => {
