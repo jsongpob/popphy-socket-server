@@ -23,6 +23,11 @@ var filepathfromUnity = "";
 //DIRECT TO INDEX.HTML
 //______________________HOME___________________________
 app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index_preview.html');
+})
+
+//______________________HOME___________________________
+app.get('/controller-starter-home', (req, res) => {
     res.sendFile(__dirname + '/public/home.html');
 })
 
