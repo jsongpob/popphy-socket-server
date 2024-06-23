@@ -68,6 +68,11 @@
             socket.timeout(5000).emit("channel_platfrom", "startCapture", (err, response) => {
                 if (err) {} else {console.log(response);}
             });
+
+            setTimeout(() => {
+                console.log('Redirecting now');
+                redirectTo();
+            }, 50000);
         })
 
         //Go to style_list.html
@@ -78,6 +83,12 @@
                 if (err) {} else {console.log(response);}
             });
         })
+
+        function redirectTo() {
+            console.log('Redirect function called');
+            window.location.href = "https://popphy-socket-server.onrender.com/captured-ad";
+        }
     </script>
+
 </body>
 </html>
