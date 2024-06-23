@@ -88,6 +88,11 @@ app.get('/captured-ts', (req, res) => {
     res.sendFile(__dirname + '/public/captured/captured_ts.html');
 })
 
+//______________REDIRECT_TO_IN_PROGRESS___________-
+app.get('/inprogress-ad', (req, res) => {
+    res.sendFile(__dirname + '/public/in_progress/inprogress_ad.html');
+})
+
 //___________________END_______________________
 app.get('/end', (req, res) => {
     res.sendFile(__dirname + '/public/end.html');

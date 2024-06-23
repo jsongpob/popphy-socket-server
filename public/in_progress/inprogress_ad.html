@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captued American Dinner | POPPHY</title>
+    <title>In Progress | POPPHY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="/public/css/font_mitr.css">
 
     <script src="https://popphy-socket-server.onrender.com/socket.io/socket.io.js"></script>
+
+    <script>
+        function redirectToEnd() {
+            window.location="https://popphy-socket-server.onrender.com/captured-ad";
+        }
+        setTimeout('redirectToEnd()', 15000);
+    </script>
 </head>
 <body>
 
@@ -30,16 +37,12 @@
     <div class="container-fluid">
         <div class="container-fluid position-absolute top-50 start-50 translate-middle px-3">
             <div class="text-center margin-40-bottom">
-                <img src="/public/img/recorded/ap-recorded.png" alt="animal_party" class="img-fluid title-size">
+                <img src="/public/img/inprogress/ad-progress.png" alt="american_dinner" class="img-fluid title-size">
             </div>
         </div>
         <div class="text-center mt-5 mitr-medium fixed-bottom margin-30-bottom">
             <div class="mb-5">
-                <p class="mitr-medium fs-2">Happy with the picture, or want to take another?</p>
-            </div>
-            <div class="d-flex justify-content-center">
-                <p><a id="onRetakeBTN" href="https://popphy-socket-server.onrender.com/playing-ap" class="gray-button fs-1 px-5 mx-3">Retake</a></p>
-                <p><a id="onEndBTN" href="https://popphy-socket-server.onrender.com/end" class="yellow-button fs-1 px-5 mx-3">Finish</a></p>
+                <p class="mitr-medium fs-2">Hurry, let's act cool and move a little!</p>
             </div>
         </div>
     </div>
@@ -61,11 +64,11 @@
 
     <!-- ______________NEW_SCRIPTS_______________ -->
     <script>
-        //Go to /playing/playing_ap.html
+        //Go to playing_ad.html
         const onRetake = document.getElementById('onRetakeBTN');
         onRetake.addEventListener('click', () => {
             //send to socket server
-            socket.timeout(5000).emit("channel_platfrom", "goAPfull", (err, response) => {
+            socket.timeout(5000).emit("channel_platfrom", "goADfull", (err, response) => {
                 if (err) {} else {console.log(response);}
             });
         })
