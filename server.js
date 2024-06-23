@@ -92,6 +92,15 @@ app.get('/captured-ts', (req, res) => {
 app.get('/inprogress-ad', (req, res) => {
     res.sendFile(__dirname + '/public/in_progress/inprogress_ad.html');
 })
+app.get('/inprogress-ap', (req, res) => {
+    res.sendFile(__dirname + '/public/in_progress/inprogress_ap.html');
+})
+app.get('/inprogress-hw', (req, res) => {
+    res.sendFile(__dirname + '/public/in_progress/inprogress_hw.html');
+})
+app.get('/inprogress-ts', (req, res) => {
+    res.sendFile(__dirname + '/public/in_progress/inprogress_ts.html');
+})
 
 //___________________END_______________________
 app.get('/end', (req, res) => {
